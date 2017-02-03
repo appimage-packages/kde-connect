@@ -47,6 +47,7 @@ frameworks:
     - plasma-framework
     - kdecoration
     - breeze
+    - kcmutils
 type: git
 url: http://anongit.kde.org/kdeconnect-kde
 buildsystem: cmake
