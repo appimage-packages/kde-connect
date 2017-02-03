@@ -1,5 +1,5 @@
-name: kde-connect
-binary: kde-connect
+name: kdeconnect
+binary: kdeconnect
 packages: ''
   #app specifc
 frameworks:
@@ -48,7 +48,7 @@ frameworks:
     - kdecoration
     - breeze
 type: git
-url: http://anongit.kde.org/kde-connect
+url: http://anongit.kde.org/kdeconnect
 buildsystem: cmake
 buildoptions: '-DCMAKE_INSTALL_PREFIX:PATH=/opt/usr -DKDE_INSTALL_SYSCONFDIR=/opt/etc -DBUILD_TESTING=OFF'
 dependencies:

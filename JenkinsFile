@@ -25,7 +25,7 @@ node('linux') {
 
     currentBuild.result = "SUCCESS"
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '6', daysToKeepStr: '', numToKeepStr: '5')), disableConcurrentBuilds(), \
-    [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/appimage-packages/kde-connect/'], pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/5 * * * *')])])
+    [$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/appimage-packages/kdeconnect/'], pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/5 * * * *')])])
     try {
 
         stage( 'Checkout' ) {
@@ -35,7 +35,7 @@ node('linux') {
             extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'appimage-template']], submoduleCfg: [], \
             userRemoteConfigs: [[url: 'https://github.com/appimage-packages/appimage-template']]]
             checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, \
-            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kde-connect']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kde-connect']]]
+            extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'kdeconnect']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://anongit.kde.org/kdeconnect']]]
        }
         stage( 'Setup' ) {
             sh 'bundle install'
